@@ -23,6 +23,7 @@ seneca.use(require('cp-permissions-plugin'), {
   config: __dirname + '/config/permissions'
 });
 seneca.use(require('seneca-kue'));
+seneca.use(require('seneca-queue'));
 seneca.use(require('./lib/queues'), {config: config.kue})
 process.on('SIGINT', shutdown);
 process.on('SIGTERM', shutdown);
